@@ -1,0 +1,19 @@
+package: local/courseCollector
+import:
+- package: github.com/valyala/fasthttp
+  version: ^20160617.0.0
+- package: golang.org/x/text
+  subpackages:
+  - encoding/charmap
+- package: github.com/mailru/easyjson
+  subpackages:
+  - '...'
+- package: github.com/go-redis/redis
+  version: ^6.7.5
+- package: github.com/jackc/pgx
+  version: ^3.0.1
+  subpackages:
+  - stdlib
+  - pgtype
+- package: github.com/pkg/errors
+  version: ^0.8.0

@@ -1,0 +1,41 @@
+hash: dcc5b79744b89bd349a90fca5c9791140c4f0232f520beb40651d5084538adf9
+updated: 2017-12-22T17:35:48.354476446+03:00
+imports:
+- name: github.com/go-redis/redis
+  version: 9c885d5ba8a22f260badcffde1649915fbeebfc0
+- name: github.com/jackc/pgx
+  version: 66918e80dfde8d5cb09af9aebf40e2cce2eb0cc0
+  subpackages:
+  - chunkreader
+  - internal/sanitize
+  - pgio
+  - pgproto3
+  - pgtype
+  - stdlib
+- name: github.com/klauspost/compress
+  version: ea08389e0dc46025380296f7dd04ab0e8de36adb
+  subpackages:
+  - flate
+  - gzip
+  - zlib
+- name: github.com/klauspost/cpuid
+  version: eae9b3e628d72774e13bdf024e78c0802f85a5b9
+- name: github.com/mailru/easyjson
+  version: 32fa128f234d041f196a9f3e0fea5ac9772c08e1
+  subpackages:
+  - '...'
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/valyala/fasthttp
+  version: d42167fd04f636e20b005e9934159e95454233c7
+  subpackages:
+  - fasthttputil
+- name: golang.org/x/text
+  version: eb22672bea55af56d225d4e35405f4d2e9f062a0
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/internal
+  - encoding/internal/identifier
+  - transform
+testImports: []

@@ -1,0 +1,60 @@
+# Este
+#
+*.sublime-workspace
+src/common/secrets.json
+src/native/config.js
+src/native/messages.js
+webpack-assets.json
+firebase/rules.json
+*.jsbundle
+
+# React Native
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IJ
+#
+.idea
+.gradle
+.vscode
+local.properties
+
+# node.js
+#
+node_modules/
+npm-debug.log
+
+# PHP
+#
+vendor
+cache
+
+# Marko
+#
+*.marko.js
+
+# Template compiler
+*.generated.*
+package.json
+package-lock.json
