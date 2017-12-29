@@ -7,9 +7,8 @@ import (
 )
 
 type CourceExmo struct {
-	BuyPrice  float64 `json:"buy_price"`
-	SellPrice float64 `json:"sell_price"`
-	Course    float64 `json:"-"`
+	BuyPrice  float64 `json:"buy_price,string"`
+	SellPrice float64 `json:"sell_price,string"`
 	// LastTrade float32 `json:"last_trade"`
 	// High      float32 `json:"high"`
 	// Low       float32 `json:"low"`

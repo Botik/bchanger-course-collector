@@ -16,24 +16,13 @@ func main() {
 		panic(err)
 	}
 
-	rows, err := db.Query("SELECT * FROM \"Currency\"")
-	defer rows.Close()
-	rows.
-		println(len(rows.FieldDescriptions()))
+	storage := entities.Storage(db)
+	currencyRepository := storage.GetRepository(entities.CurrencyType)
+	rows, err := currencyRepository.GetAll()
 
 	if nil != err {
 		panic(err)
 	}
 
-	for rows.Next() {
-		var cur entities.Currency
-
-		entities.Unmarshal(rows, &cur)
-
-		fmt.Printf("%s\n", cur.Name)
-	}
-
-	if err := rows.Err(); err != nil {
-		panic(err)
-	}
+	fmt.Printf("%+v", rows)
 }

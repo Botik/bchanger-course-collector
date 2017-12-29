@@ -1,17 +1,38 @@
 package entities
 
-import "github.com/jackc/pgx"
+import (
+	"errors"
 
-var (
-	CurrencyType = iota
+	"github.com/jackc/pgx"
 )
 
-type DBDecoder interface {
-	Decode(r *pgx.Rows) error
+const (
+	CourseType uint8 = iota
+	CurrencyType
+)
+
+type Stor struct {
+	conn *pgx.Conn
 }
 
-func Unmarshal(r *pgx.Rows, d DBDecoder) error {
-	return d.Decode(r)
+type Entity interface {
+	GetTableName() string
+	Decode(r *pgx.Rows) (Entity, error)
+}
+
+func Storage(conn *pgx.Conn) Stor {
+	return Stor{conn}
+}
+
+func (s *Stor) GetRepository(repType uint8) (Repository, error) {
+	switch repType {
+	case CourseType:
+		return Repository{s.conn, Course{}}, nil
+	case CurrencyType:
+		return Repository{s.conn, Currency{}}, nil
+	}
+
+	return Repository{}, errors.New("Undefined Repository")
 }
 
 func decodeEnmptyString(b []byte) string {
